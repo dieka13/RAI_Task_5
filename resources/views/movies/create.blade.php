@@ -24,9 +24,9 @@
 	      <label for="genre" class="text-right middle">Genre</label>
 	    </div>
 	    <div class="small-10 columns">
-	    	<select id="genre"  name="genre">
+	    	<select id="genre" name="genre">
 			@foreach ($genres as $genre)
-				<option value="{{ $genre->genre_id }}"> {{ $genre->name }} </option>
+				<option value="{{ $genre->id }}"> {{ $genre->name }} </option>
 			@endforeach
 	    	</select>
 	    </div>

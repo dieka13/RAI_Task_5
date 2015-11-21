@@ -16,7 +16,7 @@
 	<tr>
 		<td>{{ $song->title }}</td>
 		<td>{{ $song->artist }}</td>
-		<td>{{ $song->genre_id }}</td>
+		<td>{{ $song->genre->name }}</td>
 		<td></td>	
 	</tr>
 	@endforeach

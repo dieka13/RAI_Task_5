@@ -40,16 +40,8 @@
 			  <li>
 			    <a href="#">Songs</a>
 			    <ul class="menu vertical nested is-active">
-			      <li>
-			        <a href="#">Item 1A</a>
-			        <ul class="menu vertical nested">
-			          <li><a href="#">Item 1Ai</a></li>
-			          <li><a href="#">Item 1Aii</a></li>
-			          <li><a href="#">Item 1Aiii</a></li>
-			        </ul>
-			      </li>
-			      <li><a href="#">Item 1B</a></li>
-			      <li><a href="#">Item 1C</a></li>
+			      <li><a href="{{ url('songs') }}">Index</a></li>
+			      <li><a href="{{ url('songs/create') }}">Insert</a></li>
 			    </ul>
 			  </li>
 			  <li>
