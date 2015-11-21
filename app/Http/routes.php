@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', 'TestController@index');
+Route::get('songs', 'TestController@index');
+Route::get('songs/create', 'TestController@create');
+Route::post('songs', 'TestController@store');

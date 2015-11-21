@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>RAI Task 5</title>
-</head>
-<body>
-	<h1>RAI Task 5</h1>
+@extends('master_layout')
 
-	@section('sidebar')
-	<p>Master Sidebar</p>
-	@show
+@section('content')
+<h2>Song Index</h2>
 
-	<div>
-		@yeild('content')
-	</div>
-</body>
-</html>
+<table>
+	<thead>
+		<th>Title</th>
+		<th>Artist</th>
+		<th>Genre</th>
+		<th>Tags</th>
+	</thead>
+
+	<tbody>
+	@foreach ($songs as $song)
+	<tr>
+		<td>{{ $song->title }}</td>
+		<td>{{ $song->artist }}</td>
+		<td>{{ $song->genre_id }}</td>
+		<td></td>	
+	</tr>
+	@endforeach
+	</tbody>
+	
+</table>
+@stop

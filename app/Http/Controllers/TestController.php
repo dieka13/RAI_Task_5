@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
+use App\song;
+use App\genre;
 
 class TestController extends Controller
 {
@@ -17,7 +20,8 @@ class TestController extends Controller
     public function index()
     {
         //
-        echo "HELLOOO!!!!";
+        $songs = \App\song::all();
+        return view('movies.index', compact('songs'));
     }
 
     /**
@@ -28,6 +32,8 @@ class TestController extends Controller
     public function create()
     {
         //
+        $genres = \App\genre::all();
+        return view('movies.create', compact('genres'));
     }
 
     /**
@@ -39,6 +45,14 @@ class TestController extends Controller
     public function store(Request $request)
     {
         //
+        $input = Request::all();
+
+        $song = new Song;
+        $song->title = $input['title'];
+        $song->genre_id = $input['genre'];
+        $song->artist = $input['artist'];
+        $song->save();
+        return redirect('songs');
     }
 
     /**
