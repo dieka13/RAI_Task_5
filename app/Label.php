@@ -4,15 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Label extends Model
 {
     //
-    public $timestamps = false;
-
-    public function song()
+    public function songs()
     {
     	return $this->hasMany('App\Song');
     }
-
-    
 }

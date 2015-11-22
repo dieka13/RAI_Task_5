@@ -3,7 +3,7 @@
 @section('content')
 <h2>Song Index</h2>
 
-<table>
+<table class="hover">
 	<thead>
 		<th>Title</th>
 		<th>Artist</th>

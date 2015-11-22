@@ -69,5 +69,6 @@
 	<script>
 	  $(document).foundation();
 	</script>
+	@yield('script')
 	</body>
 </html>
