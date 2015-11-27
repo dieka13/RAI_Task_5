@@ -2,7 +2,7 @@
 
 @section('content')
 	<h2>Insert New Song</h2>
-	{!! Form::open(['url'=>'songs', 'id'=>'song_form']) !!}
+	{!! Form::open(['action'=>['SongController@store'], 'id'=>'song_form']) !!}
 		@include('songs.partials.form')
 	{!! Form::close() !!}
 @stop

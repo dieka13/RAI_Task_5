@@ -3,7 +3,7 @@
 @section('content')
 <h2>Song Index</h2>
 
-<table class="hover">
+<table class="hover full-width">
 	<thead>
 		<th>Title</th>
 		<th>Artist</th>
@@ -26,9 +26,9 @@
 			@endforelse
 		</td>
 		<td>
-			<a class="button secondary" href="{{ url('lyrics/view/'.$song->id) }}">Lyrics</a>
+			<a class="button secondary" href="{{ url('lyrics/'.$song->id.'/view') }}">Lyrics</a>
 			<a class="button" href="{{ url('songs/'.$song->id.'/edit') }}">Edit</a>
-			<a class="button alert" href="{{ url('songs/delete/'.$song->id) }}">Hapus</a>
+			<a class="button alert" href="{{ url('songs/'.$song->id.'/delete') }}">Hapus</a>
 		</td>	
 	</tr>
 	@endforeach

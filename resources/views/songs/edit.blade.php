@@ -2,7 +2,7 @@
 
 @section('content')
 	<h2>Edit Song</h2>
-	{!! Form::model($song, ['action'=>['TestController@update', $song->id], 'method'=>'PATCH']) !!}
+	{!! Form::model($song, ['action'=>['SongController@update', $song->id], 'method'=>'PATCH']) !!}
 		@include('songs.partials.form')
 	{!! Form::close() !!}
 @stop

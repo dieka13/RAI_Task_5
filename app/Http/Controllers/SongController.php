@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use App\song;
 use App\genre;
 
-class TestController extends Controller
+class SongController extends Controller
 {
     /**
      * Display a listing of the resource.
