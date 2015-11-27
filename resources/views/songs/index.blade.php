@@ -17,7 +17,7 @@
 	<tr>
 		<td>{{ $song->title }}</td>
 		<td>{{ $song->artist }}</td>
-		<td>{{ $song->genre->name }}</td>
+		<td><a href="{{ url('genre/'.$song->genre->id) }}">{{ $song->genre->name }}</a></td>
 		<td>
 			@forelse ($song->labels as $label)
 				<span class="label">{{ $label->name }}</span>

@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\song;
-use App\genre;
-
-class SongController extends Controller
+class LyricController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +17,6 @@ class SongController extends Controller
     public function index()
     {
         //
-        $songs = \App\song::all();
-        return view('songs.index', compact('songs'));
     }
 
     /**
@@ -32,10 +27,6 @@ class SongController extends Controller
     public function create()
     {
         //
-        $page_title = "Insert New Song";
-        $genres = Genre::lists('name', 'id')->all();
-        $default = "";
-        return view('songs.create', compact('genres', 'song', 'page_title', 'default'));
     }
 
     /**
@@ -47,14 +38,6 @@ class SongController extends Controller
     public function store(Request $request)
     {
         //
-        $input = Request::all();
-
-        $song = new Song;
-        $song->title = $input['title'];
-        $song->genre_id = $input['genre_id'];
-        $song->artist = $input['artist'];
-        $song->save();
-        return redirect('songs');
     }
 
     /**
@@ -77,11 +60,6 @@ class SongController extends Controller
     public function edit($id)
     {
         //
-        $page_title = "Edit Song";
-        $song = Song::findOrFail($id);
-        $genres = Genre::lists('name', 'id')->all();
-        $default = $song->genre->id;
-        return view('songs.edit', compact('page_title', 'song', 'genres', 'default'));
     }
 
     /**
@@ -94,9 +72,6 @@ class SongController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $song = Song::findOrFail($id);
-        $song->update(Request::all());
-        return redirect('songs');
     }
 
     /**

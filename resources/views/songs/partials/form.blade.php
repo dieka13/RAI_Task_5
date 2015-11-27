@@ -28,10 +28,16 @@
       <label for="genre" class="text-right middle">Label</label>
     </div>
     <div class="small-12 medium-10 columns">
-    	<div class="callout">
-    		<span class="label">Guitar Solo <button class="label-delete" type="button">&times;</button></span>
-    		<span class="label">Piano <button class="label-delete" type="button">&times;</button></span>
-    		<span class="label">Violin <button class="label-delete" type="button">&times;</button></span>
+    	<div id="label_list" class="callout">
+        @if(isset($song))
+          @forelse($song->labels as $label)
+      		  <span class="label">{{ $label->name }} <button class="label-delete-{{ $label->id }}" type="button">&times;</button></span>
+          @empty
+            None. Please add one below if you wish to
+          @endforelse
+        @else
+          None. Please add one by using "+" button
+        @endif
     	</div>
 		<div class="input-group">
 			<input class="input-group-field" type="text" id="new_label">
