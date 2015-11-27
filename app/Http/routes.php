@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('songs', 'TestController@index');
 Route::get('songs/create', 'TestController@create');
 Route::post('songs', 'TestController@store');
+Route::get('songs/{id}/edit', 'TestController@edit');
+Route::put('songs/{id}', 'TestController@update');
+Route::patch('songs/{id}', 'TestController@update');

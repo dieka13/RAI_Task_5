@@ -21,7 +21,7 @@ class TestController extends Controller
     {
         //
         $songs = \App\song::all();
-        return view('movies.index', compact('songs'));
+        return view('songs.index', compact('songs'));
     }
 
     /**
@@ -32,8 +32,10 @@ class TestController extends Controller
     public function create()
     {
         //
-        $genres = \App\genre::all();
-        return view('movies.create', compact('genres'));
+        $page_title = "Insert New Song";
+        $genres = Genre::lists('name', 'id')->all();
+        $default = "";
+        return view('songs.create', compact('genres', 'page_title', 'default'));
     }
 
     /**
@@ -49,7 +51,7 @@ class TestController extends Controller
 
         $song = new Song;
         $song->title = $input['title'];
-        $song->genre_id = $input['genre'];
+        $song->genre_id = $input['genre_id'];
         $song->artist = $input['artist'];
         $song->save();
         return redirect('songs');
@@ -75,6 +77,10 @@ class TestController extends Controller
     public function edit($id)
     {
         //
+        $song = Song::findOrFail($id);
+        $genres = Genre::lists('name', 'id')->all();
+        $default = $song->genre->id;
+        return view('songs.edit', compact('song', 'genres', 'default'));
     }
 
     /**
@@ -87,6 +93,9 @@ class TestController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $song = Song::findOrFail($id);
+        $song->update(Request::all());
+        return redirect('songs');
     }
 
     /**

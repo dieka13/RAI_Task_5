@@ -8,6 +8,7 @@ class Song extends Model
 {
     //
     public $timestamps = false;
+    protected $fillable = ['title', 'artist', 'genre_id'];
 
     public function genre(){
     	return $this->belongsTo('App\Genre');
@@ -15,7 +16,7 @@ class Song extends Model
 
     public function labels()
     {
-    	return $this->hasMany('App\Label');
+    	return $this->belongsToMany('App\Label');
     }
 
     public function lyric()

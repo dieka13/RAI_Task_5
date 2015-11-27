@@ -47,11 +47,18 @@
 			  <li>
 			    <a href="#">Genres</a>
 			    <ul class="menu vertical nested">
-			      <li><a href="#">Item 2A</a></li>
-			      <li><a href="#">Item 2B</a></li>
+			      <li><a href="#">Index</a></li>
+			      <li><a href="#">Insert</a></li>
 			    </ul>
 			  </li>
-			  <li><a href="#">Labels</a></li>
+			  <li>
+			    <a href="#">Labels</a>
+			    <ul class="menu vertical nested">
+			      <li><a href="#">Index</a></li>
+			      <li><a href="#">Insert</a></li>
+			      <li><a href="#">Assign</a></li>
+			    </ul>
+			  </li>
 			</ul>
 			
 
