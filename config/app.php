@@ -149,7 +149,7 @@ return [
          *
          */
         'Illuminate\Html\HtmlServiceProvider',
-
+        Bestmomo\Scafold\ScafoldServiceProvider::class, 
     ],
 
     /*

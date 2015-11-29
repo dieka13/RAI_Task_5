@@ -15,15 +15,17 @@
 	    </ul>
 	  </div>
 	  <div class="top-bar-right">
+	  	@if(Auth::check())
 	    <ul class="dropdown menu" data-dropdown-menu>
 	      <li class="has-submenu">
-	        <a href="#">Username</a>
+	        <a href="#">{{ Request::user()->name }}</a>
 	        <ul class="submenu menu vertical" data-submenu>
-	          <li><a href="#">Logout</a></li>
+	          <li><a href="{{ url('auth/logout') }}">Logout</a></li>
 	          <li><a href="#">Settings</a></li>
 	        </ul>
 	      </li>
 	    </ul>
+	    @endif
 	  </div>
 	</div>
 	

@@ -5,11 +5,13 @@
 
 <table class="hover full-width">
 	<thead>
-		<th>Title</th>
-		<th>Artist</th>
-		<th>Genre</th>
-		<th>Tags</th>
-		<th>Action</th>
+		<tr>
+			<th>Title</th>
+			<th>Artist</th>
+			<th>Genre</th>
+			<th>Tags</th>
+			<th>Action</th>
+		</tr>
 	</thead>
 
 	<tbody>
@@ -26,9 +28,13 @@
 			@endforelse
 		</td>
 		<td>
-			<a class="button secondary" href="{{ url('lyrics/'.$song->id.'/view') }}">Lyrics</a>
-			<a class="button" href="{{ url('songs/'.$song->id.'/edit') }}">Edit</a>
-			<a class="button alert" href="{{ url('songs/'.$song->id.'/delete') }}">Hapus</a>
+			<div class="button-group">
+				<a class="button secondary" href="{{ url('lyrics/'.$song->id.'/view') }}">Lyrics</a>
+				@if(Auth::check())
+				<a class="button" href="{{ url('songs/'.$song->id.'/edit') }}">Edit</a>
+				<a class="button alert" href="{{ url('songs/'.$song->id.'/delete') }}">Hapus</a>
+				@endif
+			</div>
 		</td>	
 	</tr>
 	@endforeach
