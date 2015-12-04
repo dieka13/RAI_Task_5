@@ -25,8 +25,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-
-
 Route::get('songs', 'SongController@index');
 Route::get('songs/create', 'SongController@create');
 Route::post('songs', 'SongController@store');

@@ -12,6 +12,14 @@ use App\genre;
 
 class SongController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'index']);
+    }
+
+    
+
     /**
      * Display a listing of the resource.
      *

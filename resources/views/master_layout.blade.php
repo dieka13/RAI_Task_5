@@ -10,22 +10,28 @@
 	
 	<div class="top-bar">
 	  <div class="top-bar-left">
-	    <ul class="dropdown menu" data-dropdown-menu>
+	    <ul class="dropdown menu">
 	      <li class="menu-text">Site Title</li>
 	    </ul>
 	  </div>
 	  <div class="top-bar-right">
+
 	  	@if(Auth::check())
 	    <ul class="dropdown menu" data-dropdown-menu>
+	      <li class="menu-text">Site Title</li>
 	      <li class="has-submenu">
-	        <a href="#">{{ Request::user()->name }}</a>
+	        <a href="#">One</a>
 	        <ul class="submenu menu vertical" data-submenu>
-	          <li><a href="{{ url('auth/logout') }}">Logout</a></li>
-	          <li><a href="#">Settings</a></li>
+	          <li><a href="#">One</a></li>
+	          <li><a href="#">Two</a></li>
+	          <li><a href="#">Three</a></li>
 	        </ul>
 	      </li>
+	      <li><a href="#">Two</a></li>
+	      <li><a href="#">Three</a></li>
 	    </ul>
 	    @endif
+	    
 	  </div>
 	</div>
 	
@@ -54,6 +60,16 @@
 			      <li><a href="#">Index</a></li>
 			      <li><a href="#">Insert</a></li>
 			      <li><a href="#">Assign</a></li>
+			    </ul>
+			  </li>
+			  <li>
+			    <a href="#">Authentication</a>
+			    <ul class="menu vertical nested">
+			      @if(Auth::check())
+			      <li><a href="{{ url('auth/logout') }}">logout</a></li>
+			      @else
+			      <li><a href="{{ url('auth/login') }}">login</a></li>
+			      @endif
 			    </ul>
 			  </li>
 			</ul>
